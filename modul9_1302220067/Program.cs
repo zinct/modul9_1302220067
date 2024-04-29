@@ -13,7 +13,10 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(config =>
+    {
+        config.DocumentTitle = "TodoAPI";
+    });
 }
 
 app.UseHttpsRedirection();
